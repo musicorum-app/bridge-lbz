@@ -123,6 +123,13 @@ dependencies = [
 ]
 
 [[package]]
+name = "bridge_lbz"
+version = "0.1.0"
+dependencies = [
+ "rocket",
+]
+
+[[package]]
 name = "bumpalo"
 version = "3.11.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -805,13 +812,6 @@ dependencies = [
  "syn",
  "version_check",
  "yansi",
-]
-
-[[package]]
-name = "profana"
-version = "0.1.0"
-dependencies = [
- "rocket",
 ]
 
 [[package]]
