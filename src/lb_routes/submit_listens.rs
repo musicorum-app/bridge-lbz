@@ -1,6 +1,6 @@
 use rocket::serde::json::Json;
 use rocket::http::Status;
-use crate::lb_types::*;
+use crate::lb_types::{SubmitListens, APIResponse};
 use crate::lb_utils::{lb_respond, lb_ok};
 
 #[rocket::post("/submit-listens", format="json", data = "<data>")]
@@ -16,14 +16,4 @@ pub fn submit_listens(data: Json<SubmitListens<'_>>) -> (Status, Json<APIRespons
     println!("{:?}", sl.payload[0]);
 
     lb_ok()
-}
-
-#[rocket::get("/validate-token")]
-pub fn validate_token() -> Json<ValidateToken<'static>> {
-    Json(ValidateToken {
-        code: 200,
-        user_name: "2",
-        message: "Token valid.",
-        valid: true
-    })
 }
